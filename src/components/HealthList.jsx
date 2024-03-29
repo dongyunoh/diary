@@ -1,5 +1,6 @@
 import "./HealthList.css";
 import Button from "./Button";
+import HealthItem from "./HealthItem";
 
 const HealthList = () => {
   return (
@@ -11,7 +12,9 @@ const HealthList = () => {
         </select>
         <Button text={"운동 기록하기"} />
       </div>
-      <div className="list_wrapper"></div>
+      <div className="list_wrapper">
+        <HealthItem />
+      </div>
     </div>
   );
 };
