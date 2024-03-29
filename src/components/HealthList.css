@@ -1,0 +1,24 @@
+.HealthList .menu_bar {
+  margin: 20px 0px;
+  display: flex;
+  gap: 10px;
+}
+
+.HealthList .menu_bar select {
+  background-color: rgba(48, 45, 45, 0.888);
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.HealthList .menu_bar button {
+    background-color: rgba(48, 45, 45, 0.888);
+  color: white;
+  border: none;
+  flex: 1;
+}
+https://blog.naver.com/qkrcks8028/223017500247
