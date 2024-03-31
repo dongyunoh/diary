@@ -1,18 +1,18 @@
-import { getEmotionImage } from "../util/get-emotion-image";
+import { getActionImage } from "../util/get-action-image";
 import Button from "./Button";
 import "./HealthItem.css";
 import { useNavigate } from "react-router-dom";
 
-const HealthItem = ({ id, emotionId, createdDate, content }) => {
+const HealthItem = ({ id, actionId, createdDate, content }) => {
   const nav = useNavigate();
 
   return (
     <div className="HealthItem">
       <div
         onClick={() => nav(`/diary/${id}`)}
-        className={`img_section img_section_${emotionId}`}
+        className={`img_section img_section_${actionId}`}
       >
-        <img src={getEmotionImage(7)} />
+        <img src={getActionImage(2)} />
       </div>
       <div onClick={() => nav(`/diary/${id}`)} className="info_section">
         <div className="created_date">
