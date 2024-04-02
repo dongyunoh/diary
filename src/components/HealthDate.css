@@ -1,0 +1,19 @@
+.HealthDate {
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.HealthDate > div {
+  display: flex;
+}
+
+.HealthDate > .date_left {
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.HealthDate .date_right {
+  width: 50%;
+  justify-content: flex-end;
+}
