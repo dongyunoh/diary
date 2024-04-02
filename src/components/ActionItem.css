@@ -1,0 +1,11 @@
+.ActionItem {
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ActionItem .action_img {
+  width: 50%;
+  margin-bottom: 10%;
+}

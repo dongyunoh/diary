@@ -1,4 +1,4 @@
-import "./HealthDate";
+import "./HealthDate.css";
 
 const HealthDate = ({ leftChild, rightChild }) => {
   return (

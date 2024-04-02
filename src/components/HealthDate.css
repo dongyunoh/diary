@@ -8,12 +8,17 @@
   display: flex;
 }
 
-.HealthDate > .date_left {
+.HealthDate .date_left {
+  font-size: 22px;
+  font-weight: bold;
   width: 50%;
   justify-content: flex-start;
 }
 
-.HealthDate .date_right {
-  width: 50%;
-  justify-content: flex-end;
+.HealthDate .date_right > input {
+  background-color: rgb(236, 236, 236);
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px 10px;
 }

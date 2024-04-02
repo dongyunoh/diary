@@ -10,3 +10,22 @@
   font-size: 20px;
   padding: 10px 20px;
 }
+
+.Editor .action_section .action_list_wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Editor .action_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Editor .button_section {
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
