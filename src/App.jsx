@@ -9,7 +9,6 @@ import Diary from "./pages/Diary";
 import Notfound from "./pages/Notfound";
 import Edit from "./pages/Edit";
 
-
 const mockData = [
   {
     id: 1,

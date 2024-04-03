@@ -3,6 +3,7 @@
   font-weight: bold;
 }
 
+
 .Editor > section > header > title {
   background-color: rgb(226, 226, 226);
   border: none;
@@ -23,9 +24,6 @@
 }
 
 .Editor .button_section {
-  position: fixed;
-  bottom: 0;
-  width: 50%;
   display: flex;
   justify-content: space-between;
 }

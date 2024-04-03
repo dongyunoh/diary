@@ -1,7 +1,9 @@
+import { useState } from "react";
 import ActionItem from "./ActionItem";
 import Button from "./Button";
-import "./Editor.css";
 import HealthDate from "./HealthDate";
+
+import "./Editor.css";
 
 const actionList = [
   {
@@ -22,15 +24,37 @@ const actionList = [
   },
 ];
 
+const getStringedDate = (targetDate) => {
+  let year = targetDate.getFullYear();
+  let month = targetDate.getMonth() + 1;
+  let date = targetDate.getDate();
+
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  if (date < 10) {
+    date = `0${date}`;
+  }
+  return `${year}-${month}-${date}`;
+};
+
 const Editor = () => {
+  const [input, setInput] = useState({
+    createDate: new Date(),
+    actionId: 3,
+  });
   return (
     <div className="Editor">
       <section className="date_section">
         <HealthDate
           leftChild={"운동한 날짜"}
-          rightChild={<input type="date" />}
+          rightChild={
+            <input value={getStringedDate(input.createDate)} type="date" />
+          }
         />
       </section>
+
       <section className="action_section">
         <h4>상세운동</h4>
         <div className="action_list_wrapper">
