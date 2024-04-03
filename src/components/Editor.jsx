@@ -39,18 +39,43 @@ const getStringedDate = (targetDate) => {
   return `${year}-${month}-${date}`;
 };
 
-const Editor = () => {
+const Editor = ({ onSubmit }) => {
   const [input, setInput] = useState({
-    createDate: new Date(),
+    createdDate: new Date(),
     actionId: 3,
+    content: "",
   });
+
+  const onChangeInput = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    if (name === "createdDate") {
+      value = new Date(value);
+    }
+
+    setInput({
+      ...input,
+      [name]: value,
+    });
+  };
+
+  const onClickSubmitButton = () => {
+    onSubmit(input);
+  };
+
   return (
     <div className="Editor">
       <section className="date_section">
         <HealthDate
           leftChild={"운동한 날짜"}
           rightChild={
-            <input value={getStringedDate(input.createDate)} type="date" />
+            <input
+              name="createdDate"
+              onChange={onChangeInput}
+              value={getStringedDate(input.createdDate)}
+              type="date"
+            />
           }
         />
       </section>
@@ -59,16 +84,38 @@ const Editor = () => {
         <h4>상세운동</h4>
         <div className="action_list_wrapper">
           {actionList.map((item) => (
-            <ActionItem key={item.actionId} {...item} />
+            <ActionItem
+              onClick={() =>
+                onChangeInput({
+                  target: {
+                    name: "actionId",
+                    value: item.actionId,
+                  },
+                })
+              }
+              key={item.actionId}
+              {...item}
+              isSelected={item.actionId === input.actionId}
+            />
           ))}
         </div>
       </section>
-      <section className="action_text">
+      <section className="content_section">
         <h4>이미지를 클릭하여 자신의 운동을 기록</h4>
+        <textarea
+          name="content"
+          value={input.content}
+          onChange={onChangeInput}
+          placeholder="오늘은 어떘나요?"
+        />
       </section>
       <section className="button_section">
         <Button text={"취소하기"} />
-        <Button text={"저장하기"} type={"POSITIVE"} />
+        <Button
+          onClick={onClickSubmitButton}
+          text={"저장하기"}
+          type={"POSITIVE"}
+        />
       </section>
     </div>
   );

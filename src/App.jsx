@@ -50,29 +50,29 @@ export const DiaryDispatchContext = createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(4);
+  const idRef = useRef(5);
 
   // 새로운 기록 추가
-  const onCreate = (createdDate, emotionId, content) => {
+  const onCreate = (createdDate, actionId, content) => {
     dispatch({
       type: "CREATE",
       data: {
         id: idRef.current++,
         createdDate,
-        emotionId,
+        actionId,
         content,
       },
     });
   };
 
   //기록 수정하기.
-  const onUpdate = (id, createDate, emotionId, content) => {
+  const onUpdate = (id, createdDate, actionId, content) => {
     dispatch({
       type: "UPDATE",
       data: {
         id,
-        createDate,
-        emotionId,
+        createdDate,
+        actionId,
         content,
       },
     });
