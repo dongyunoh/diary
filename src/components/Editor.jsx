@@ -88,20 +88,17 @@ const Editor = ({ onSubmit }) => {
           {actionList.map((item) => (
             <ActionItem
               onClick={() =>
-                
                 onChangeInput({
                   target: {
                     name: "actionId",
                     value: item.actionId,
                   },
-                })  
+                })
               }
-              
               key={item.actionId}
               {...item}
               isSelected={item.actionId === input.actionId}
             />
-            
           ))}
         </div>
       </section>
@@ -114,7 +111,7 @@ const Editor = ({ onSubmit }) => {
           placeholder="오늘은 어떘나요?"
         />
       </section>
-      
+
       <section className="button_section">
         <Button onClick={() => nav(-1)} text={"취소하기"} />
         <Button
