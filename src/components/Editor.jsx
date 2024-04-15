@@ -2,6 +2,7 @@ import { useState } from "react";
 import ActionItem from "./ActionItem";
 import Button from "./Button";
 import HealthDate from "./HealthDate";
+import { useNavigate } from "react-router-dom";
 
 import "./Editor.css";
 
@@ -45,6 +46,7 @@ const Editor = ({ onSubmit }) => {
     actionId: 3,
     content: "",
   });
+  const nav = useNavigate();
 
   const onChangeInput = (e) => {
     let name = e.target.name;
@@ -86,22 +88,25 @@ const Editor = ({ onSubmit }) => {
           {actionList.map((item) => (
             <ActionItem
               onClick={() =>
+                
                 onChangeInput({
                   target: {
                     name: "actionId",
                     value: item.actionId,
                   },
-                })
+                })  
               }
+              
               key={item.actionId}
               {...item}
               isSelected={item.actionId === input.actionId}
             />
+            
           ))}
         </div>
       </section>
       <section className="content_section">
-        <h4>이미지를 클릭하여 자신의 운동을 기록</h4>
+        <h4>위 이미지를 클릭하여 자신의 운동을 기록</h4>
         <textarea
           name="content"
           value={input.content}
@@ -109,8 +114,9 @@ const Editor = ({ onSubmit }) => {
           placeholder="오늘은 어떘나요?"
         />
       </section>
+      
       <section className="button_section">
-        <Button text={"취소하기"} />
+        <Button onClick={() => nav(-1)} text={"취소하기"} />
         <Button
           onClick={onClickSubmitButton}
           text={"저장하기"}

@@ -21,7 +21,7 @@ const HealthItem = ({ id, actionId, createdDate, content }) => {
         <div className="content">{content}</div>
       </div>
       <div className="button_section">
-        <Button onClick={() => nav(`/edit/${id})`)} text={"기록하기"} />
+        <Button onClick={() => nav(`/edit/${id})`)} text={"수정하기"} />
       </div>
     </div>
   );

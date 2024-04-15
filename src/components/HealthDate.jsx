@@ -1,6 +1,6 @@
 import "./HealthDate.css";
 
-const HealthDate = ({ leftChild, rightChild }) => {
+export const HealthDate = ({ leftChild, rightChild }) => {
   return (
     <div className="HealthDate">
       <div className="date_left">{leftChild}</div>

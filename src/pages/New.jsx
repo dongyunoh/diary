@@ -4,6 +4,7 @@ import Editor from "../components/Editor";
 
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+
 import { DiaryDispatchContext } from "../App";
 
 const New = () => {
@@ -11,6 +12,7 @@ const New = () => {
   const nav = useNavigate();
   const onSubmit = (input) => {
     onCreate(input.createdDate, input.actionId, input.content);
+    nav("/", { replace: true });
   };
 
   return (
