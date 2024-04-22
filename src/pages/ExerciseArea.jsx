@@ -10,7 +10,7 @@ const ExerciseArea = () => {
     <div>
       <Header
         title={"부위 별 운동"}
-        leftChild={<Button onClick={() => nav(-1)} text="뒤로가기" />}
+        leftChild={<Button onClick={() => nav("/new")} text="뒤로가기" />}
       />
       <div>
         <ExerciseList />

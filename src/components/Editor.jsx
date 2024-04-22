@@ -83,7 +83,11 @@ const Editor = ({ onSubmit }) => {
       </section>
 
       <section className="action_section">
-        <h4>상세운동</h4>
+        <Button
+          className="action_button"
+          onClick={() => nav("/exercise")}
+          text={"상세운동"}
+        />
         <div className="action_list_wrapper">
           {actionList.map((item) => (
             <ActionItem

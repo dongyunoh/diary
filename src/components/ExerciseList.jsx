@@ -1,12 +1,22 @@
 import "./ExerciseList.css";
 import Button from "./Button";
+import Modal from "./Modal";
+import { useState } from "react";
 
 const ExerciseList = () => {
+  const [modal, setModal] = useState(false);
+
   return (
     <div className="ExerciseList">
       <div className="select_bar">
         <div className="chest_body">
-          <Button onClick={() => {}} text={"가슴"} />
+          <Button
+            onClick={() => {
+              setModal(!modal);
+            }}
+            text={"가슴"}
+          />{" "}
+          {modal === true ? <Modal /> : null}
         </div>
         <div className="back_body">
           <Button onClick={() => {}} text={"등"} />

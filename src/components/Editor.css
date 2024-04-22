@@ -3,7 +3,6 @@
   font-weight: bold;
 }
 
-
 .Editor > section > header > title {
   background-color: rgb(226, 226, 226);
   border: none;
@@ -26,4 +25,10 @@
 .Editor .button_section {
   display: flex;
   justify-content: space-between;
+}
+
+.Editor .action_section button {
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
