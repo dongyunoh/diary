@@ -1,13 +1,20 @@
+import { getPressImage } from "../util/get-press-image";
+import { useState } from "react";
+
 import "./Modal.css";
 
 const Modal = () => {
+  // const [chestBtn, setChestBtn] = useState("가슴운동");
+
   return (
     <div className="Modal">
-      <h2>제목</h2>
-      <p>날짜</p>
-      <p>상세내용</p>
+      <div className={`img_section img_section_${actionId}`}>
+        <img src={getPressImage(0)} />
+      </div>
     </div>
   );
 };
 
 export default Modal;
+
+//<a href="https://kr.lovepik.com/images/png-the-immortal.html">바벨 Png vectors by Lovepik.com</a>
