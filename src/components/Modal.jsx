@@ -8,9 +8,10 @@ const Modal = () => {
 
   return (
     <div className="Modal">
-      <div className={`img_section img_section_${actionId}`}>
+      <h2>벤치프레스</h2>
+      {/* <div className={`img_section img_section_${actionId}`}>
         <img src={getPressImage(0)} />
-      </div>
+      </div> */}
     </div>
   );
 };
