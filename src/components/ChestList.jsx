@@ -1,10 +1,10 @@
-import "./Modal.css";
-// import chest1 from "./../assets/chest1.png";
+import "./ChestList.css";
+import chest1 from "./../assets/chest1.png";
 
-const Modal = () => {
+const ChestList = () => {
   return (
-    <div className="chest_List_wrapper">
-      {/* <img src={chest1} alt="Chest lnc. logo" /> */}
+    <div className="ChestList">
+      <img src={chest1} alt="Chest lnc. logo" />
       <p>
         스쿼트, 데드리프트와 함께 웨이트 트레이닝을 대표하는 3대 운동 중
         하나이다. <hr></hr> 그 중에서 벤치 프레스는 웨이트 트레이닝을 해본 적이
@@ -16,6 +16,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
-
-//<a href="https://kr.lovepik.com/images/png-the-immortal.html">바벨 Png vectors by Lovepik.com</a>
+export default ChestList;
