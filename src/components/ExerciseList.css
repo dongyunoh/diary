@@ -1,9 +1,10 @@
-.ExerciseList .select_bar {
+.exerciseList {
+  margin-top: 10px;
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.ExerciseList .select_bar .chest_body {
-  width: 100;
-}
+/* .exerciseList h3 {
+  align-items: center;
+} */

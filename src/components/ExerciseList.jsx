@@ -1,45 +1,24 @@
-import "./ExerciseList.css";
-import Button from "./Button";
-import Modal from "./Modal";
 import { useState } from "react";
-
-import ChestList from "./ChestList";
-import Main_Data from "./Main_Data";
+import "./ExerciseList.css";
 
 const ExerciseList = () => {
-  const [modal, setModal] = useState(false);
+  const [choice, setChoice] = useState("chest");
 
-  const [content, setContent] = useState();
+  const fruits = ["chest", "back", "button", "shouder"];
 
-  const handleClickButton = (e) => {
-    const [name] = e.target;
-    setContent(name);
+  const options = fruits.map((fruit) => {
+    return <option value={fruit}>{fruit}</option>;
+  });
+  console.log(choice);
+  const handleFruit = (event) => {
+    setChoice(event.target.value);
   };
-
-  const selectComponent = {
-    first: <ChestList />,
-  };
-
-  console.log(content);
 
   return (
-    <div className="ExerciseList">
-      <div className="select_bar">
-        <Container>
-          {Main_Data.map((data) => {
-            return (
-              <Button
-                onClick={handleClickButton}
-                name={data.name}
-                key={data.id}
-              >
-                {data.text}
-              </Button>
-            );
-          })}
-        </Container>
-        {content && <ChestList>{selectComponent[content]}</ChestList>}
-      </div>
+    <div className="exerciseList">
+      <select value={choice} onChange={handleFruit}>
+        {options}
+      </select>
     </div>
   );
 };
