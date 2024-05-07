@@ -9,6 +9,7 @@ import Diary from "./pages/Diary";
 import Notfound from "./pages/Notfound";
 import Edit from "./pages/Edit";
 import ExerciseArea from "./pages/ExerciseArea";
+import Chest from "./pages/Chest";
 
 const mockData = [
   {
@@ -96,6 +97,7 @@ function App() {
             <Route path="/diary/:id" element={<Diary />} />
             <Route path="/edit/:id" element={<Edit />} />
             <Route path="/exercise" element={<ExerciseArea />} />
+            <Route path="/chest" element={<Chest />} />
             <Route path="*" element={<Notfound />} />
           </Routes>
         </DiaryDispatchContext.Provider>
