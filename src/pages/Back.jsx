@@ -1,11 +1,11 @@
-import chest1 from "./../assets/chest1.png";
+import Back1 from "./../assets/back.png";
 
-const Chest = () => {
+const Back = () => {
   return (
-    <div className="ChestList">
+    <div className="BackList">
       <div className="bench_press">
-        <img src={chest1} alt="Chest lnc. logo" />
-        <h4>벤치 프레스</h4>
+        <img src={Back1} alt="Back lnc. logo" />
+        <h4>데드리프트</h4>
         <p>
           스쿼트, 데드리프트와 함께 웨이트 트레이닝을 대표하는 3대 운동 중
           하나이다. <hr></hr> 그 중에서 벤치 프레스는 웨이트 트레이닝을 해본
@@ -18,6 +18,6 @@ const Chest = () => {
   );
 };
 
-export default Chest;
+export default Back;
 
-//<a href="https://kr.lovepik.com/images/png-1070550.html">Sitting Position Png vectors by Lovepik.com</a>
+//<a href="https://kr.lovepik.com/images/png-24898.html">Simple Png vectors by Lovepik.com</a>

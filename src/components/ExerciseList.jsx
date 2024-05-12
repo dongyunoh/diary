@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import Chest from "../pages/Chest";
+import Back from "../pages/Back";
 // import ChestList from "./ChestList";
 
 import Button from "./Button";
@@ -34,12 +35,12 @@ function ExerciseList() {
       </p>
       <p>
         <NavLink
-          to="/login"
+          to="/Back"
           className={({ isActive }) => {
             return isActive ? "orange" : "";
           }}
         >
-          Login
+          Back
         </NavLink>
       </p>
       <hr />
@@ -47,15 +48,6 @@ function ExerciseList() {
       <Routes>
         <Route path="/chest" element={<Chest />}></Route>
       </Routes>
-      {/* <div className="exercies_button">
-        <div className="chest">
-          <Button onClick={() => nav("/chest")} text="chest" />
-        </div>
-        <div className="back">
-          <Button onClick={() => nav("/back")} text="back" />
-        </div>
-      </div>
-      <div className="exercies_screen"></div> */}
     </div>
   );
 }
