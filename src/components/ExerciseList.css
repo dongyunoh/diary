@@ -1,7 +1,11 @@
-.exerciseList {
-  margin-top: 10px;
+.exerciseList .List_link p {
+  margin-left: 5px;
 }
 
-/* .exerciseList h3 {
-  align-items: center;
-} */
+.exerciseList .todoList {
+  width: 500px;
+  margin: 0 auto;
+
+  font-display: column;
+  gap: 10px;
+}
