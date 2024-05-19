@@ -4,11 +4,10 @@ import Chest from "../pages/Chest";
 import Back from "../pages/Back";
 import TDHeader from "./TDHeader";
 import TDEditor from "./TDEditor";
-
-
-
+import { useState } from "react";
 
 import "./ExerciseList.css";
+import TDList from "./TDList";
 
 const activeStyle = {
   color: "red",
@@ -20,8 +19,31 @@ const deactiveStyle = {
   textDecoration: "none",
 };
 
+const mockData = [
+  {
+    id: 0,
+    isDone: false,
+    content: "벤치프레스",
+    date: new Date().getTime(),
+  },
+  {
+    id: 1,
+    isDone: false,
+    content: "데드리프트",
+    date: new Date().getTime(),
+  },
+  {
+    id: 2,
+    isDone: false,
+    content: "스쿼트",
+    date: new Date().getTime(),
+  },
+];
+
 function ExerciseList() {
   // const nav = useNavigate();
+
+  const [todos, setTodos] = useState(mockData);
 
   return (
     <div className="exerciseList">
@@ -54,6 +76,7 @@ function ExerciseList() {
       <div className="todoList">
         <TDHeader />
         <TDEditor />
+        <TDList />
       </div>
     </div>
   );

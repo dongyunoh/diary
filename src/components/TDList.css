@@ -1,0 +1,23 @@
+.TDList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.TDList > input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 15px 0px;
+}
+
+.TDList > input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(46, 162, 133);
+}
+
+.TDList .tds_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
