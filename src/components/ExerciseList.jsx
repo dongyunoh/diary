@@ -1,13 +1,11 @@
 import React from "react";
-import { Route, Routes, Link, NavLink } from "react-router-dom";
-import Chest from "../pages/Chest";
-import Back from "../pages/Back";
+import { NavLink } from "react-router-dom";
 import TDHeader from "./TDHeader";
 import TDEditor from "./TDEditor";
-import { useState } from "react";
+import TDList from "./TDList";
+import { useState, useRef } from "react";
 
 import "./ExerciseList.css";
-import TDList from "./TDList";
 
 const activeStyle = {
   color: "red",
@@ -45,6 +43,19 @@ function ExerciseList() {
 
   const [todos, setTodos] = useState(mockData);
 
+  const idRef = useRef(3);
+
+  const onCreate = (content) => {
+    const newTD = {
+      id: idRef.current++,
+      isDone: false,
+      content: content,
+      date: new Date().getTime(),
+    };
+
+    setTodos([newTD, ...todos]);
+  };
+
   return (
     <div className="exerciseList">
       <div className="List_link">
@@ -75,7 +86,7 @@ function ExerciseList() {
 
       <div className="todoList">
         <TDHeader />
-        <TDEditor />
+        <TDEditor onCreate={onCreate} />
         <TDList />
       </div>
     </div>
