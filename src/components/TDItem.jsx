@@ -1,12 +1,12 @@
 import "./TDItem.css";
 
-const TDItem = () => {
+const TDItem = ({ id, isDone, content, date }) => {
   return (
     <div className="TDItem">
-      <input type="checkbox" />
-      <div className="content">Todo...</div>
-      <div className="date">Date</div>
-      <button>삭제 </button>
+      <input readOnly checked={isDone} type="checkbox" />
+      <div className="content">{content}</div>
+      <div className="date">{new Date(date).toLocaleDateString()}</div>
+      <button>삭제</button>
     </div>
   );
 };

@@ -87,7 +87,7 @@ function ExerciseList() {
       <div className="todoList">
         <TDHeader />
         <TDEditor onCreate={onCreate} />
-        <TDList />
+        <TDList todos={todos} />
       </div>
     </div>
   );
