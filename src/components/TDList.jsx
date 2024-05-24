@@ -2,7 +2,7 @@ import "./TDList.css";
 import TDItem from "./TDItem";
 import { useState } from "react";
 
-const TDList = ({ todos }) => {
+const TDList = ({ todos, onUpdate }) => {
   const [search, setSearch] = useState("");
 
   const onChangeSearch = (e) => {
@@ -13,7 +13,9 @@ const TDList = ({ todos }) => {
     if (search === "") {
       return todos;
     }
-    return todos.filter((todo) => todo.content.includes(search));
+    return todos.filter((todo) =>
+      todo.content.toLowerCase().includes(search.toLowerCase())
+    );
   };
 
   const filteredTodos = getFilteredData();
@@ -27,7 +29,7 @@ const TDList = ({ todos }) => {
       />
       <div className="tds_wrapper">
         {filteredTodos.map((todo) => {
-          return <TDItem key={todo.id} {...todo} />;
+          return <TDItem key={todo.id} {...todo} onUpdate={onUpdate} />;
         })}
       </div>
     </div>

@@ -56,6 +56,14 @@ function ExerciseList() {
     setTodos([newTD, ...todos]);
   };
 
+  const onUpdate = (targetId) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+      )
+    );
+  };
+
   return (
     <div className="exerciseList">
       <div className="List_link">
@@ -87,7 +95,7 @@ function ExerciseList() {
       <div className="todoList">
         <TDHeader />
         <TDEditor onCreate={onCreate} />
-        <TDList todos={todos} />
+        <TDList todos={todos} onUpdate={onUpdate} />
       </div>
     </div>
   );
