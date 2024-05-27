@@ -64,6 +64,10 @@ function ExerciseList() {
     );
   };
 
+  const onDelete = (targetId) => {
+    setTodos(todos.filter((todo) => todo.id !== targetId));
+  };
+
   return (
     <div className="exerciseList">
       <div className="List_link">
@@ -95,7 +99,7 @@ function ExerciseList() {
       <div className="todoList">
         <TDHeader />
         <TDEditor onCreate={onCreate} />
-        <TDList todos={todos} onUpdate={onUpdate} />
+        <TDList todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import "./TDList.css";
 import TDItem from "./TDItem";
 import { useState } from "react";
 
-const TDList = ({ todos, onUpdate }) => {
+const TDList = ({ todos, onUpdate, onDelete }) => {
   const [search, setSearch] = useState("");
 
   const onChangeSearch = (e) => {
@@ -29,7 +29,14 @@ const TDList = ({ todos, onUpdate }) => {
       />
       <div className="tds_wrapper">
         {filteredTodos.map((todo) => {
-          return <TDItem key={todo.id} {...todo} onUpdate={onUpdate} />;
+          return (
+            <TDItem
+              key={todo.id}
+              {...todo}
+              onUpdate={onUpdate}
+              onDelete={onDelete}
+            />
+          );
         })}
       </div>
     </div>
